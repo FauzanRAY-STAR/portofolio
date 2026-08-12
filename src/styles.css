@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
@@ -690,5 +692,193 @@ h1 { margin: 5px 0 0; font-size: clamp(42px, 6.2vw, 68px); line-height: 1.02; le
 
   100% {
     transform: translate(300px, 220px) scale(1.05);
+  }
+}
+
+
+/* =====================================================
+   SCROLL REVEAL ENHANCEMENTS
+   Uses the existing .reveal / .is-visible system in App.jsx
+   ===================================================== */
+
+/* Section heading sequence */
+.reveal .section-kicker,
+.reveal h2,
+.reveal .section-intro {
+  opacity: 0;
+  translate: 0 18px;
+  transition:
+    opacity 0.65s cubic-bezier(.2, .7, .3, 1),
+    translate 0.65s cubic-bezier(.2, .7, .3, 1);
+}
+
+.reveal.is-visible .section-kicker,
+.reveal.is-visible h2,
+.reveal.is-visible .section-intro {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.reveal .section-kicker { transition-delay: 60ms; }
+.reveal h2 { transition-delay: 120ms; }
+.reveal .section-intro { transition-delay: 180ms; }
+
+/* About / fact cards */
+.reveal .fact-card {
+  opacity: 0;
+  translate: 0 22px;
+  scale: .985;
+  transition:
+    opacity 0.6s cubic-bezier(.2, .7, .3, 1),
+    translate 0.6s cubic-bezier(.2, .7, .3, 1),
+    scale 0.6s cubic-bezier(.2, .7, .3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.reveal.is-visible .fact-card {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+.reveal .fact-card:nth-child(1) { transition-delay: 80ms; }
+.reveal .fact-card:nth-child(2) { transition-delay: 140ms; }
+.reveal .fact-card:nth-child(3) { transition-delay: 200ms; }
+.reveal .fact-card:nth-child(4) { transition-delay: 260ms; }
+
+/* Skills: stagger each column */
+.reveal .skills-column {
+  opacity: 0;
+  translate: 0 26px;
+  scale: .985;
+  transition:
+    opacity 0.65s cubic-bezier(.2, .7, .3, 1),
+    translate 0.65s cubic-bezier(.2, .7, .3, 1),
+    scale 0.65s cubic-bezier(.2, .7, .3, 1),
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.reveal.is-visible .skills-column {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+.reveal .skills-column:nth-child(1) { transition-delay: 70ms; }
+.reveal .skills-column:nth-child(2) { transition-delay: 130ms; }
+.reveal .skills-column:nth-child(3) { transition-delay: 190ms; }
+.reveal .skills-column:nth-child(4) { transition-delay: 250ms; }
+.reveal .skills-column:nth-child(5) { transition-delay: 310ms; }
+.reveal .skills-column:nth-child(6) { transition-delay: 370ms; }
+
+/* Featured project details */
+.reveal .case-box,
+.reveal .phone-frame,
+.reveal .mini-gallery figure {
+  opacity: 0;
+  translate: 0 22px;
+  scale: .99;
+  transition:
+    opacity 0.65s cubic-bezier(.2, .7, .3, 1),
+    translate 0.65s cubic-bezier(.2, .7, .3, 1),
+    scale 0.65s cubic-bezier(.2, .7, .3, 1);
+}
+
+.reveal.is-visible .case-box,
+.reveal.is-visible .phone-frame,
+.reveal.is-visible .mini-gallery figure {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+.reveal .case-box:nth-child(1) { transition-delay: 80ms; }
+.reveal .case-box:nth-child(2) { transition-delay: 150ms; }
+.reveal .phone-frame { transition-delay: 120ms; }
+.reveal .mini-gallery figure:nth-child(1) { transition-delay: 190ms; }
+.reveal .mini-gallery figure:nth-child(2) { transition-delay: 260ms; }
+
+/* Project cards: stagger per row */
+.reveal .project-card {
+  opacity: 0;
+  translate: 0 28px;
+  scale: .985;
+  transition:
+    opacity 0.65s cubic-bezier(.2, .7, .3, 1),
+    translate 0.65s cubic-bezier(.2, .7, .3, 1),
+    scale 0.65s cubic-bezier(.2, .7, .3, 1),
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.reveal.is-visible .project-card {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+.reveal .project-card:nth-child(3n + 1) { transition-delay: 80ms; }
+.reveal .project-card:nth-child(3n + 2) { transition-delay: 150ms; }
+.reveal .project-card:nth-child(3n + 3) { transition-delay: 220ms; }
+
+/* Experience timeline: enters from the left */
+.reveal .timeline-item {
+  opacity: 0;
+  translate: -26px 0;
+  transition:
+    opacity 0.65s cubic-bezier(.2, .7, .3, 1),
+    translate 0.65s cubic-bezier(.2, .7, .3, 1);
+}
+
+.reveal.is-visible .timeline-item {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.reveal .timeline-item:nth-child(1) { transition-delay: 80ms; }
+.reveal .timeline-item:nth-child(2) { transition-delay: 150ms; }
+.reveal .timeline-item:nth-child(3) { transition-delay: 220ms; }
+.reveal .timeline-item:nth-child(4) { transition-delay: 290ms; }
+.reveal .timeline-item:nth-child(5) { transition-delay: 360ms; }
+
+/* Contact cards + form */
+.reveal .contact-card,
+.reveal .contact-form {
+  opacity: 0;
+  translate: 0 24px;
+  scale: .99;
+  transition:
+    opacity 0.65s cubic-bezier(.2, .7, .3, 1),
+    translate 0.65s cubic-bezier(.2, .7, .3, 1),
+    scale 0.65s cubic-bezier(.2, .7, .3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.reveal.is-visible .contact-card,
+.reveal.is-visible .contact-form {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+.reveal .contact-card:nth-child(1) { transition-delay: 80ms; }
+.reveal .contact-card:nth-child(2) { transition-delay: 150ms; }
+.reveal .contact-card:nth-child(3) { transition-delay: 220ms; }
+.reveal .contact-form { transition-delay: 180ms; }
+
+/* Respect reduced-motion accessibility settings */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal * {
+    opacity: 1 !important;
+    translate: none !important;
+    scale: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
   }
 }

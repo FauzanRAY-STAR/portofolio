@@ -313,16 +313,21 @@ function App() {
               </div>
             </div>
 
-            <div className="hero-visual-wrap">
-              <div className="portrait-card">
-                <ImageBox src="/assets/profile.png" alt="Foto profil profesional Fauzan Rofif Ardiyanto" className="portrait" />
-              </div>
-              <span className="floating-tag tag-kotlin">Kotlin</span>
-              <span className="floating-tag tag-android">Android</span>
-              <span className="floating-tag tag-cv">Computer Vision</span>
-              <span className="floating-tag tag-camerax">CameraX</span>
-              <span className="floating-tag tag-mediapipe">MediaPipe</span>
-            </div>
+            <div className="hero-photo-wrap">
+  <div className="hero-photo-card">
+    <img
+      src="/profile.png"
+      alt="Fauzan Rofif Ardiyanto"
+      className="hero-photo"
+    />
+  </div>
+
+  <span className="tech-tag tag-kotlin">Kotlin</span>
+  <span className="tech-tag tag-android">Android</span>
+  <span className="tech-tag tag-vision">Computer Vision</span>
+  <span className="tech-tag tag-camerax">CameraX</span>
+  <span className="tech-tag tag-mediapipe">MediaPipe</span>
+</div>
           </div>
         </section>
 
